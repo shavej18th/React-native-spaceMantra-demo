@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "login-page",
-    "slug": "login-page",
+    "name": "SpaceMantraDemo",
+    "slug": "SpaceMantraDemo",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/AppIcon/Group11575/Group11575.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/Group11573/Group11573.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -15,16 +15,23 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.SpaceMantraDemo"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/AppIcon/Group11575/Group11575.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.anonymous.SpaceMantraDemo"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/AppIcon/Group11575/Group11575.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "3ae9d2c2-2dbd-464f-82fd-31ddf7fa2174"
+      }
     }
   }
 }
