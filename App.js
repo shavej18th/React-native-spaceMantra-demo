@@ -1,15 +1,11 @@
 import * as React from "react";
 import { Text, View, ActivityIndicator, StatusBar } from "react-native";
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client";
 import { NavigationContainer } from "@react-navigation/native";
 import DrawerNavigator from "./src/Navigation/DrawerTabNavigator/DrawerNavigator";
 import InitialStackNavigation from "./src/Navigation/InitialStackNavigation/InitialStackNavigation";
-import { REACT_APP_BACKENED_URL } from "@env";
+import { client } from "./src/utils/ApolloProvider/index.js";
 
-const client = new ApolloClient({
-  uri:REACT_APP_BACKENED_URL,
-  cache: new InMemoryCache(),
-});
 function SplashScreen() {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>

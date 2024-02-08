@@ -6,18 +6,20 @@ import {
     ScrollView,
     Image,
   } from "react-native";
-import Imagesdata from "../imagesData/Imagesdata";
-import { horizontalScale, moderateScale, verticalScale } from "../../Themes/Matrices";
-import { getFonts } from '../../CustomDrawer/CustomDrawerContent';
+import Imagesdata from "../../imagesData/Imagesdata";
+import { horizontalScale, moderateScale, verticalScale } from "../../../Themes/Matrices";
+import { getFonts } from '../../../CustomDrawer/CustomDrawerContent';
 import { useQuery, gql } from '@apollo/client';
-export const CONTINENT_QUERY = gql`
-  query ContinentQuery {
-    continents {
-      code
-      name
-    }
-  }
-`;
+import { CONTINENT_QUERY } from './carousal.gql';
+
+// export const CONTINENT_QUERY = gql`
+//   query ContinentQuery {
+//     continents {
+//       code
+//       name
+//     }
+//   }
+// `;
 function Carousal() {
   const { data, loading } = useQuery(CONTINENT_QUERY);
   console.log(data)

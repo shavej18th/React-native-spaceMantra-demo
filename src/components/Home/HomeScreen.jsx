@@ -3,7 +3,7 @@ import {
   StyleSheet,
   ScrollView, Alert, BackHandler,
 } from "react-native";
-import Carousal from "../Carousal/Carousals/Carousal";
+import Carousal from "../Carousal/Carousals/TopItems/Carousal";
 import ImagesCarousal from "../Carousal/Carousals/ImagesCarousal";
 import CardCarousal from "../Carousal/Carousals/GiftCardCarousal";
 import PlansCardCarousal from "../Carousal/Carousals/PlansCardCarousal";
