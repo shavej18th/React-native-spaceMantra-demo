@@ -12,14 +12,16 @@ import {
   CategoryIcon,
   UserIcon,
 } from "./BottomTabSvgIcon";
+import { moderateScale, verticalScale } from "../../components/Themes/Matrices";
 
 const Tab = createBottomTabNavigator();
 
 const styles = StyleSheet.create({
   tabBarLabel: {
     color: "#292929",
-    fontSize: 12,
-    marginBottom: 10,
+    fontSize: moderateScale(10),
+    fontFamily:'Poppins-Medium',
+    marginBottom: moderateScale(10),
   },
 });
 
@@ -32,9 +34,9 @@ const BottomTabNavigator = () => {
         tabBarStyle: {
           display: "flex",
           position: "absolute",
-          borderTopRightRadius: 35,
-          borderTopLeftRadius: 35,
-          height: 70,
+          borderTopRightRadius: moderateScale(35),
+          borderTopLeftRadius: moderateScale(35),
+          height: verticalScale(80),
         },
       }}
     >

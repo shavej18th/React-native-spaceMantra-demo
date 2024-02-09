@@ -38,7 +38,7 @@ function DealsCarousal() {
                     <Text style={styles.offPeriod}>Rs199/mo</Text>
                    </View>
                    <View style={styles.LowerTextBlock}>
-                    <Text style={{ fontFamily:"Poppins-Medium"}}>Lorem ipsum dolor sit amet consectetur..Lorem ipsum dolor sit amet consectetur Lorem,</Text>
+                    <Text style={{ fontFamily:"Poppins-Medium",fontSize:16, fontStyle:'italic'}}>Lorem ipsum dolor sit amet consectetur..Lorem ipsum dolor sit amet consectetur Lorem,</Text>
                    </View>
                 </ImageBackground>
               </View>
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
         paddingBottom:moderateScale(5),
         alignSelf:'center',
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
     },
     textStyle:{
       fontStyle:'normal',

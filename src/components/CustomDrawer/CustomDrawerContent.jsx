@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Dimensions, StyleSheet, TouchableOpacity } from "react-native";
 import { View, Text, Image } from "react-native";
 import {
@@ -6,29 +6,9 @@ import {
   moderateScale,
   verticalScale,
 } from "../Themes/Matrices";
-import * as Font from 'expo-font'
-export const getFonts = () =>
-   Font.loadAsync({
-    'Poppins-Medium': require('../../assets/fonts/Poppins-Medium.ttf'),
-  });
+import CategoryNavigator from "./CategoryNavigator";
 
 function CustomDrawerContent({ navigation }) {
-    const [fontLoaded,setFontLoaded] = useState(false)
-
-    useEffect(() => {
-        async function fetchFonts() {
-          await getFonts();
-          setFontLoaded(true);
-        }
-        fetchFonts();
-      }, []);
-    if(!fontLoaded){
-        return(
-            <View>
-                <Text>Loading...</Text>
-            </View>
-        )
-    }
   return (
     <View style={styles.container}>
       <View style={styles.categoryHead}>
@@ -40,6 +20,9 @@ function CustomDrawerContent({ navigation }) {
         <View>
           <Text style={styles.titleText}>Categories</Text>
         </View>
+      </View>
+      <View>
+        <CategoryNavigator/>
       </View>
     </View>
   );
@@ -59,8 +42,8 @@ const styles = StyleSheet.create({
     alignItems:'center'
   },
   arrowIcon:{
-    marginLeft:moderateScale(20),
-    marginRight:moderateScale(20)
+    marginLeft:horizontalScale(20),
+    marginRight:horizontalScale(20)
   },
   Icon:{
     // height:verticalScale(48),

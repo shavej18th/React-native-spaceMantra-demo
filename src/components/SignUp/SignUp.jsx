@@ -23,7 +23,7 @@ function SignUp({ navigation, route }) {
       style={{ width: "100%", height: "100%" }}
     >
       <View style={styles.container}>
-        <Text style={styles.textStyle}>Create Account</Text>
+        <Text style={[styles.textStyle,{ fontFamily:'Poppins-Medium'}]}>Create Account</Text>
       </View>
       <TextInput
         textContentType="emailAddress"
@@ -58,6 +58,7 @@ function SignUp({ navigation, route }) {
             textDecorationLine: "underline",
             textDecorationColor: "#000",
             textDecorationStyle: "solid",
+            fontFamily:'Poppins-Medium'
           }}
         >
           {showPassword ? "Show Password" : "Hide Password"}
@@ -91,10 +92,10 @@ function SignUp({ navigation, route }) {
         </TouchableOpacity>
       </View>
       <View style={{ flex: 1, alignItems: "center" }}>
-        <Text style={{textAlignVertical:'center'}}>
+        <Text style={{textAlignVertical:'center',fontFamily:"Poppins-Medium"}}>
           Already have an account?{' '}
           <TouchableOpacity onPress={() => navigation.navigate("SignIn")}>
-            <Text style={{ color: "blue" }}>SignIn</Text>
+            <Text style={{ color: "blue",fontFamily:"Poppins-Medium" }}>SignIn</Text>
           </TouchableOpacity>
         </Text>
       </View>
