@@ -13,7 +13,7 @@ function CustomDrawerContent({ navigation }) {
     <View style={styles.container}>
       <View style={styles.categoryHead}>
         <View>
-          <TouchableOpacity onPress={()=>navigation.toggleDrawer()} style={styles.arrowIcon}>
+          <TouchableOpacity onPress={()=>navigation.navigate('HomeStack')} style={styles.arrowIcon}>
             <Image style={styles.Icon} source={require("../SearchBox/Frame5/Frame5.png")} />
           </TouchableOpacity>
         </View>
@@ -22,7 +22,7 @@ function CustomDrawerContent({ navigation }) {
         </View>
       </View>
       <View>
-        <CategoryNavigator/>
+        <CategoryNavigator navigation ={ navigation }/>
       </View>
     </View>
   );

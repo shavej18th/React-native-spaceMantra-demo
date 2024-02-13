@@ -13,6 +13,7 @@ import {
   UserIcon,
 } from "./BottomTabSvgIcon";
 import { moderateScale, verticalScale } from "../../components/Themes/Matrices";
+import LocationStackNavigator from "../StackNavigator/LocationStackNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -51,8 +52,8 @@ const BottomTabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Categories"
-        component={CategoryStackNavigator}
+        name="Location"
+        component={LocationStackNavigator}
         listeners={{
           tabPress: (e) => {
             // Prevent the default action

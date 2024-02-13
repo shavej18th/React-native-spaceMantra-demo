@@ -1,34 +1,34 @@
 import React from "react";
-import { SafeAreaView, View, FlatList, StyleSheet, Text, Image } from "react-native";
+import { SafeAreaView, View, FlatList, StyleSheet, Text, Image, TouchableHighlight } from "react-native";
 import { ImageData } from "./ImageData";
 import {
   horizontalScale,
   moderateScale,
   verticalScale,
 } from "../Themes/Matrices";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-const Item = ({ title, Quantity,source }) => (
+const Item = ({ title, Quantity,source, navigation }) => (
   <View style={styles.item}>
     <View style={styles.ItemContainer}>
       <View style={styles.ImageContainer}>
         <Image source={source}/>
       </View>
-      <View>
+      <TouchableOpacity onPress={()=>{navigation.navigate('My-Category-Screen')}}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.quantity}>{Quantity}</Text>
-      </View>
+      </TouchableOpacity>
     </View>
   </View>
 );
 
-const CategoryNavigator = () => {
-  console.log(ImageData.length);
+const CategoryNavigator = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
         data={ImageData}
         renderItem={({ item }) => (
-          <Item title={item.ProductName} Quantity={item.Quantity} source={item.source} />
+          <Item title={item.ProductName} Quantity={item.Quantity} source={item.source} navigation ={ navigation }/>
         )}
         keyExtractor={(item) => item.id}
       />

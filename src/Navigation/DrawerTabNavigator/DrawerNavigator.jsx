@@ -11,6 +11,7 @@ import BottomTabNavigator from "../BottomTabNavigator/BottomTabNavigator";
 // import LocationStackNavigator from "../StackNavigator/LocationStackNavigator";
 import SearchStackNavigator from "../StackNavigator/SearchStackNavigator";
 import CustomDrawerContent from "../../components/CustomDrawer/CustomDrawerContent";
+import CategoryStackNavigator from "../StackNavigator/CategoryStackNavigator";
 
 const Drawer = createDrawerNavigator();
 
@@ -128,6 +129,17 @@ const DrawerNavigator = ({ navigation }) => {
       <Drawer.Screen
         name="My-Search-Page"
         component={SearchStackNavigator}
+        options={{
+          title: "Search Page",
+          headerTitle: () => (
+            <Text style={styles.headerTitle}>Search-Page</Text>
+          ),
+          headerShown: false,
+        }}
+      />
+      <Drawer.Screen
+        name="My-Category-Screen"
+        component={CategoryStackNavigator}
         options={{
           title: "Search Page",
           headerTitle: () => (
