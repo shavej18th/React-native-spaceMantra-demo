@@ -8,7 +8,7 @@ import {
 } from "../../Themes/Matrices";
 
 function CategoryScreen({ navigation }) {
-  console.log(navigation)
+
   return (
     <View
       style={styles.container}

@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, View, FlatList, StyleSheet, Text, Image, TouchableHighlight } from "react-native";
+import { SafeAreaView, View, FlatList, StyleSheet, Text, Image } from "react-native";
 import { ImageData } from "./ImageData";
 import {
   horizontalScale,
