@@ -14,32 +14,32 @@ import Footer from "../Footer/Footer";
 import ItemRenderer from "../Carousal/Carousals/AdvCard/ItemRenderer";
 
 function HomeScreen() {
-  useEffect(()=>{
-    const backAction =()=>{
-      Alert.alert("Hold on", 'Are you sure, You want to exit...',
-      [
-        {
-          text:"Cancel",
-          onPress:()=>null,
-          style:'cancel'
-        },
-        {
-          text:'YES',
-          onPress:()=>BackHandler.exitApp()
-        }
-      ]);
-      return true;
-    }
-    const backHandler = BackHandler.addEventListener('hardwareBackPress',backAction);
-    return ()=>backHandler.remove();
-  },[])
+  // useEffect(()=>{
+  //   const backAction =()=>{
+  //     Alert.alert("Hold on", 'Are you sure, You want to exit...',
+  //     [
+  //       {
+  //         text:"Cancel",
+  //         onPress:()=>null,
+  //         style:'cancel'
+  //       },
+  //       {
+  //         text:'YES',
+  //         onPress:()=>BackHandler.exitApp()
+  //       }
+  //     ]);
+  //     return true;
+  //   }
+  //   const backHandler = BackHandler.addEventListener('hardwareBackPress',backAction);
+  //   return ()=>backHandler.remove();
+  // },[])
   return (
     <ScrollView style={styles.container}>
      <Carousal/>
      <ImagesCarousal/>
      <CardCarousal/>
      <PlansCardCarousal/>
-     <ItemCard/>
+     <ItemCard customText={'Item for sale'}/>
      <ItemRenderer/>
      <DealsCarousal/>
      <ClientsReview/>

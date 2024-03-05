@@ -7,7 +7,7 @@ import {
   moderateScale,
 } from "../../Themes/Matrices";
 
-function CategoryScreen({ navigation }) {
+function CategoryScreen({ route, navigation }) {
 
   return (
     <View
@@ -26,7 +26,7 @@ function CategoryScreen({ navigation }) {
           <Text style={styles.titleText}>Categories</Text>
         </View>
       </View>
-      <CategoryItem />
+      <CategoryItem navigation={navigation} route={route}/>
     </View>
   );
 }

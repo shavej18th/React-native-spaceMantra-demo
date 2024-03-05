@@ -12,11 +12,13 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import Icon from "@expo/vector-icons/FontAwesome";
 import { horizontalScale, moderateScale, verticalScale } from "../../Themes/Matrices";
 
-function ItemCard() {
+function ItemCard({customText}) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.textStyle}>Item for Sale</Text>
+      <View>
+          <Text style={styles.textStyle}>{customText}</Text>
+      </View>
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.container}>
         {SaleCardData.map((item, index) => {
           return (
@@ -38,11 +40,11 @@ function ItemCard() {
                 </ImageBackground>
                 <View style={styles.info}>
                   <Text style={styles.TitleText}>CELLBELL Desire C104 </Text>
-                  <Text style={styles.TitleText}>Mid Back</Text>
+                  <Text style={styles.TitleText1}>Mid Back</Text>
                 </View>
                 <View style={styles.priceContainer}>
-                  <Text style={styles.currentPrice}>800/mo</Text>
-                  <Text style={styles.oldPrice}>1998/mo</Text>
+                  <Text style={styles.currentPrice}>₹800/mo</Text>
+                  <Text style={styles.oldPrice}>₹1998/mo</Text>
                 </View>
                 <View>
                   <Text style={styles.AdditionalText}>
@@ -61,10 +63,12 @@ function ItemCard() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 5,
+    marginTop:verticalScale(5),
+    marginRight:horizontalScale(5),
+    marginLeft:horizontalScale(5)
   },
   info: {
-    marginTop: 5,
+    marginTop:verticalScale(5),
   },
   ShoppingBagIcon: {
    left:horizontalScale(165),
@@ -92,7 +96,7 @@ const styles = StyleSheet.create({
 
   oldPrice: {
     width: horizontalScale(105),
-    fontSize: moderateScale(20),
+    fontSize: moderateScale(15),
     color: "grey",
     textDecorationLine: "line-through",
     textDecorationStyle: "solid",
@@ -101,12 +105,12 @@ const styles = StyleSheet.create({
   },
   currentPrice: {
     width: horizontalScale(105),
-    fontSize: moderateScale(20),
+    fontSize: moderateScale(15),
     marginLeft: horizontalScale(5),
     fontFamily:'Poppins-Medium'
   },
   AdditionalText: {
-    fontSize: moderateScale(16),
+    fontSize: moderateScale(12),
     marginLeft: horizontalScale(6),
     color: "#daa520",
     fontFamily:'Poppins-Medium'
@@ -126,7 +130,12 @@ const styles = StyleSheet.create({
   },
   TitleText: {
     marginLeft: horizontalScale(5),
-    fontSize: moderateScale(20),
+    fontSize: moderateScale(16),
+    fontFamily:'Poppins-Medium'
+  },
+  TitleText1: {
+    marginLeft: horizontalScale(5),
+    fontSize: moderateScale(14),
     color: "#808080",
     fontFamily:'Poppins-Medium'
   },

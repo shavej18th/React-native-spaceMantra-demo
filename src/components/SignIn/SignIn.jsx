@@ -87,13 +87,13 @@ function SignIn({ navigation, route }) {
           </View>
         </TouchableOpacity>
       </View>
-      <View style={{ flex: 1, alignItems: "center" }}>
+      <View style={{ flex: 1, alignItems: "center",alignItems:'center'}}>
         <Text style={fonStyle.TextFont}>
           Do not have an account?{" "}
+        </Text>
           <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
             <Text style={{ color: "blue", fontFamily:"Poppins-Medium"}}>SignUp</Text>
           </TouchableOpacity>
-        </Text>
       </View>
     </ImageBackground>
   );

@@ -13,7 +13,7 @@ import { CONTINENT_QUERY } from './carousal.gql';
 
 function Carousal() {
   const { data, loading } = useQuery(CONTINENT_QUERY);
-  console.log(data)
+  // console.log(data)
   return (
     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         {Imagesdata.map((item) => {

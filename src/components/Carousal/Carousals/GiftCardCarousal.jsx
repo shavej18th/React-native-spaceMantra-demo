@@ -13,7 +13,15 @@ function CardCarousal() {
 
   return (
     <View style={styles.container}>
-        <Text style={styles.textStyle}>Offers & Discounts</Text>
+        <Text style={styles.textStyle}></Text>
+        <View style={{flexDirection:'row', alignItems:'center'}}>
+        <View style={styles.Small_logo}>
+         <Image source={require('../../../assets/Image/MDI - sale/MDI - sale.png')}/>
+        </View>
+        <View>
+          <Text style={styles.textStyle}>Offers & Discounts</Text>
+        </View>
+      </View>
         <ScrollView horizontal={true}  style={styles.container} showsHorizontalScrollIndicator={false}>
         {Carddata.map((item) => {
           return (
@@ -35,15 +43,19 @@ function CardCarousal() {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      marginTop:5
+      marginTop:moderateScale(5),
+      marginRight:horizontalScale(2),
     },
     textStyle:{
       fontStyle:'normal',
-      fontSize:20,
+      fontSize:moderateScale(20),
       fontWeight:'500',
-      marginLeft:15,
-      marginTop:5,
+      marginTop:verticalScale(5),
       fontFamily:"Poppins-Medium"
+    },
+    Small_logo:{
+      marginLeft:horizontalScale(15),
+      marginRight:horizontalScale(5),
     },
     Images: {
       backgroundColor: "white",
@@ -53,7 +65,7 @@ const styles = StyleSheet.create({
     },
     ImageContainer: {
       marginLeft:moderateScale(10),
-      margin: 5,
+      margin: moderateScale(5),
       height:verticalScale(85),
       width: horizontalScale(245),
     },
