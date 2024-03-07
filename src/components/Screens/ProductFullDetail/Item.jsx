@@ -17,14 +17,17 @@ import Pincode from "./PdpComponents/Pincode";
 import CardCarousal from "../../Carousal/Carousals/GiftCardCarousal";
 import ItemCard from "../../Carousal/Carousals/ItemCard";
 import ProductFeatures from "./PdpComponents/ProductFeatures";
-import ModalBox from "./PdpComponents/ModalBox";
 
 function Item({ navigation }) {
   const [selected, setSelected] = useState(false);
   const [accordionData, setAccordionData] = useState({
+    Id:1,
     period: "12 months",
-    plan: "₹,998/mo",
+    plan: "₹800/mo",
     off: "-60% OFF",
+    off_content: "-60%",
+    old_plan: "₹1998/mo",
+    benefit: "₹1,199 X 12 = ₹14,386",
   });
   return (
     <View style={styles.container}>

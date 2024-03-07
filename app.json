@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/Group11573/Group11573.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#EAE6DB"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -21,7 +21,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/AppIcon/Group11575/Group11575.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#EAE6DB"
       },
       "package": "com.anonymous.SpaceMantraDemo"
     },
@@ -32,6 +32,9 @@
       "eas": {
         "projectId": "3ae9d2c2-2dbd-464f-82fd-31ddf7fa2174"
       }
-    }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }

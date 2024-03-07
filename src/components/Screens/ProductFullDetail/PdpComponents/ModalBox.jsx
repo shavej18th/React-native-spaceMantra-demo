@@ -6,6 +6,7 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
+  Image,
 } from "react-native";
 
 import Dialog, {
@@ -13,9 +14,51 @@ import Dialog, {
   DialogContent,
   SlideAnimation,
 } from "react-native-popup-dialog";
-import { moderateScale, verticalScale , horizontalScale } from "../../../Themes/Matrices";
+import {
+  moderateScale,
+  verticalScale,
+  horizontalScale,
+} from "../../../Themes/Matrices";
+import ContentBox from "./ContentBox";
 
-const ModalBox = ({ slideAnimationDialog, setSlideAnimationDialog ,setAccordionData}) => {
+const ModalBox = ({
+  slideAnimationDialog,
+  setSlideAnimationDialog,
+  setAccordionData,
+  accordionData,
+}) => {
+  const [uniqueselected , setUniqueSelected]= useState({
+    first:true,
+    second:false,
+    third :false
+  })
+  const data_box1 = {
+    Id:1,
+    period: "12 months",
+    plan: "₹800/mo",
+    off: "-60% OFF",
+    off_content: "-60%",
+    old_plan: "₹1998/mo",
+    benefit: "₹1,199 X 12 = ₹14,386",
+  };
+  const data_box2 = {
+    Id:2,
+    period: "9 months",
+    plan: "₹800/mo",
+    off: "-50% OFF",
+    off_content: "-50%",
+    old_plan: "₹1998/mo",
+    benefit: "₹1,199 X 12 = ₹14,386",
+  };
+  const data_box3 = {
+    Id:3,
+    period: "6 months",
+    plan: "₹800/mo",
+    off: "-45% OFF",
+    off_content: "-45%",
+    old_plan: "₹1998/mo",
+    benefit: "₹1,199 X 12 = ₹14,386",
+  };
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
@@ -27,41 +70,64 @@ const ModalBox = ({ slideAnimationDialog, setSlideAnimationDialog ,setAccordionD
             setSlideAnimationDialog(false);
           }}
           visible={slideAnimationDialog}
-          dialogTitle={<DialogTitle title="Slide Animation Dialog Sample" />}
           dialogAnimation={new SlideAnimation({ slideFrom: "bottom" })}
         >
           <DialogContent>
-            <View>
-              {/* Third row */}
+            <View style={styles.modal_title_container}>
+              <View>
+                <Text style={styles.modal_title}>Select A Tenure</Text>
+              </View>
               <TouchableOpacity
-                style={styles.inner_container}
+                style={styles.close_icon}
                 onPress={() => {
-                  setAccordionData({
-                    period: "12 months",
-                    plan: "₹,998/mo",
-                    off: "-60% OFF",
-                  });
+                  setSlideAnimationDialog(false);
                 }}
               >
-                <View style={[styles.content_container, { width: "30%" }]}>
-                  <Text style={styles.text_decor}>12 months</Text>
-                </View>
-                <View style={[styles.content_container, { width: "33%" }]}>
-                  <Text
-                    style={[
-                      styles.text_decor,
-                      { textDecorationLine: "line-through" },
-                    ]}
-                  >
-                    ₹,998/mo
-                  </Text>
-                </View>
-                <View style={[styles.content_container, { width: "36%" }]}>
-                  <View style={styles.present_off}>
-                    <Text style={styles.present_text}>-60% OFF</Text>
-                  </View>
-                </View>
+                <Image
+                  source={require("../ProductStaticData/Images/Cross-icon/Group11438/Group11438.png")}
+                />
               </TouchableOpacity>
+            </View>
+            {/* Dialog box main content */}
+            <ContentBox
+              setAccordionData={setAccordionData}
+              data={data_box1}
+              accordionData={accordionData}
+              selectedBox ={uniqueselected.first}
+              setUniqueSelected={setUniqueSelected}
+            />
+            <ContentBox
+              setAccordionData={setAccordionData}
+              data={data_box2}
+              accordionData={accordionData}
+              selectedBox ={uniqueselected.second}
+              setUniqueSelected={setUniqueSelected}
+
+            />
+            <ContentBox
+              setAccordionData={setAccordionData}
+              data={data_box3}
+              accordionData={accordionData}
+              selectedBox ={uniqueselected.third}
+              setUniqueSelected={setUniqueSelected}
+            />
+            {/* ModalText content */}
+            <View style={styles.text_container}>
+              <View>
+                <Text style={{fontFamily:"Poppins-Medium", fontSize:moderateScale(15)}}>Terms of Tenure:</Text>
+              </View>
+              <View>
+                <Text style={{fontFamily:"Poppins-Medium", fontSize:moderateScale(13)}}>The minimum rental tenure for this product is 3 months (but we know you will want to keep it longer!)</Text>
+              </View>
+              <View>
+                <Text style={{fontFamily:"Poppins-Medium", fontSize:moderateScale(13)}}>You will need to pay the rental fee upfront for the entire tenure that you may choose.</Text>
+              </View>
+              <View>
+                <Text style={{fontFamily:"Poppins-Medium", fontSize:moderateScale(13)}}>Any discounts from a valid coupon or referral code that you may have, is applied additionally to your tenure discounts.</Text>
+              </View>
+              <View>
+                <Text style={{fontFamily:"Poppins-Medium", fontSize:moderateScale(13)}}>Once your chosen tenure ends, you will have the option to renew the plan or switch to a different tenure.</Text>
+              </View>
             </View>
           </DialogContent>
         </Dialog>
@@ -77,60 +143,24 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  buttonStyle: {
-    minWidth: "100%",
-    padding: 10,
-    backgroundColor: "#f5821f",
-    margin: 15,
+  text_container: {
+    margin: moderateScale(5),
   },
-  buttonTextStyle: {
-    color: "white",
-    textAlign: "center",
+  modal_title: {
+    fontFamily: "Poppins-Medium",
+    fontSize: moderateScale(16),
+    marginTop: verticalScale(5),
+    alignSelf: "flex-start",
   },
-  titleStyle: {
-    color: "white",
-    textAlign: "center",
-    fontSize: 20,
-    marginTop: 10,
+  close_icon: {
+    marginTop: verticalScale(5),
+    left: horizontalScale(198),
   },
-
-  inner_container: {
-    height: verticalScale(50),
-    backgroundColor: "white",
-    marginRight: horizontalScale(15),
-    marginLeft: horizontalScale(10),
+  modal_title_container: {
     flexDirection: "row",
-    borderRadius: moderateScale(25),
-    marginTop: verticalScale(10),
-  },
-  content_container: {
     alignItems: "center",
-    justifyContent: "center",
-  },
-  present_off: {
-    width: horizontalScale(100),
-    height: horizontalScale(40),
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#FF8925",
-    borderRadius: moderateScale(22),
-  },
-  present_text: {
-    fontFamily: "Poppins-Medium",
-    fontSize: moderateScale(13),
-    color: "#FFFFFF",
-  },
-  gtr_than: {
-    fontFamily: "Poppins-Medium",
-    fontSize: moderateScale(20),
-    marginTop: verticalScale(5),
-    alignSelf: "center",
-  },
-  text_decor: {
-    fontFamily: "Poppins-Medium",
-    fontSize: moderateScale(12),
-    marginTop: verticalScale(5),
-    alignSelf: "center",
-    color: "#666666",
+    borderBottomWidth: 1,
+    borderBottomColor: "#666666",
+    paddingBottom: verticalScale(5),
   },
 });

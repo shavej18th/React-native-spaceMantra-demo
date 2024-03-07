@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StatusBar, useColorScheme } from "react-native";
+import { LogBox, StatusBar, useColorScheme } from "react-native";
 import { ApolloProvider } from "@apollo/client";
 import { NavigationContainer } from "@react-navigation/native";
 import DrawerNavigator from "./src/Navigation/DrawerTabNavigator/DrawerNavigator";
@@ -43,7 +43,8 @@ function App() {
     // We haven't finished checking for the token yet
     return <LoadingIndicator />;
   }
-
+// Ignore all log notifications
+LogBox.ignoreAllLogs();
   return (
     <ApolloProvider client={client}>
     <NavigationContainer>

@@ -36,22 +36,14 @@ function Tenure({ accordionData, setAccordionData }) {
           onPress={() => setSlideAnimationDialog(true)}
         >
           <Text
-            style={[
-              styles.gtr_than,
-              clicked
-                ? {
-                    transform: [{ rotate: "90deg" }],
-                    marginTop: verticalScale(5),
-                  }
-                : { transform: [{ rotate: "0deg" }] },
-            ]}
+            style={styles.gtr_than}
           >
             {">"}
           </Text>
         </TouchableOpacity>
       </View>
       {/* Popup box */}
-      <ModalBox slideAnimationDialog={slideAnimationDialog} setSlideAnimationDialog={setSlideAnimationDialog} setAccordionData={setAccordionData}/>
+      <ModalBox slideAnimationDialog={slideAnimationDialog} setSlideAnimationDialog={setSlideAnimationDialog} setAccordionData={setAccordionData} accordionData={accordionData}/>
       {/* Another Accordion */}
       <View style={[styles.inner_container,{backgroundColor:"black"}]}>
         <View style={[styles.content_container, { width: "88%" }]}>
